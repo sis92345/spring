@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="sPrinter" class="com.example.StringPrinter" />
+	<bean id="cPrinter" class="com.example.ConsolePrinter" />
+	<!-- SETTER Injection -->
+	<!-- <bean id="hello" class="com.example.Hello">
+		<property name="name" value="Spring" />	setName
+		<property name="printer" ref="sPrinter" /> setPrinter
+	</bean> -->
+	
+	<!-- Constructor Injection-->
+	<bean id="hello" class="com.example.Hello">
+		<constructor-arg name="name" type="String" value="한지민"></constructor-arg>
+		<constructor-arg name="printer" ref="sPrinter"></constructor-arg>
+	</bean>	
+
+</beans>

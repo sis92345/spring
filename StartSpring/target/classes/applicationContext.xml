@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calc" class="com.example.Calculator" />
+	<bean id="myCalculator" class="com.example.MyCalculator">
+		<!-- setter 호출로 접근 -->
+		<!-- property: 멤버변수 이름 -->
+		<!--
+		 <property name="calculator" ref="calc"></property> calculator class를 참고: setter 호출
+		<property name="firstNum" value="10"></property> 
+		<property name="secondNum"> 
+			<value>2</value>
+		</property> -->
+		<!-- 여기까지 마치면 MyCalculator.java, Calculator.java에 s아이콘이 생긴다: 해당 클래스는 Spring이 관리-->
+		<!-- ★즉 메인이 해야할 일을 Spring이 관리한다.★-->
+		
+		<!-- 생성자로 접근 -->
+		<!-- 그런데 Spring 5에서는 xml보다 annotation을 사용함 ㅋ -->
+		<!-- 
+			Spring 5.X //STS 4.8.x //Spring Boot //Java Annotation
+			Spring 4.X //STS 3.X //Spring/Spring Boot // Xml Java Annotation
+		 -->
+		<constructor-arg index="0" ref="calc"></constructor-arg> <!-- index: 생성사 파라미터 순서, 틀어지면 사용 -->
+		<constructor-arg name="firstNum" value="9"></constructor-arg>
+		<constructor-arg name="secondNum" value="5"></constructor-arg>
+	</bean>
+</beans>
