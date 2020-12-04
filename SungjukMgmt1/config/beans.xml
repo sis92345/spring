@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="chulsu" class="com.example.StudentVO">
+		<!-- Constructor Injection -->
+		<constructor-arg name="hakbun" value="2020-01"></constructor-arg>
+		<constructor-arg name="name" value="한지민"></constructor-arg>
+		<constructor-arg name="kor" value="89"></constructor-arg>
+		<constructor-arg name="eng" value="100"></constructor-arg>
+		<constructor-arg name="mat" value="77"></constructor-arg>
+		
+	</bean>
+	<bean id="younghee" class="com.example.StudentVO">
+		<!-- Constructor Injection -->
+		<constructor-arg name="hakbun" value="2020-01"></constructor-arg>
+		<constructor-arg name="name" value="김영희"></constructor-arg>
+		<constructor-arg name="kor" value="89"></constructor-arg>
+		<constructor-arg name="eng" value="100"></constructor-arg>
+		<constructor-arg name="mat" value="77"></constructor-arg>
+	</bean>
+	<bean id="myCalculator" class="com.example.Calculator">
+		<constructor-arg name="student" ref="chulsu"></constructor-arg>
+	</bean>
+
+</beans>
